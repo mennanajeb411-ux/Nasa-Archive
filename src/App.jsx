@@ -3,7 +3,7 @@ import './App.css'
 import Home from './pages/Home'
 import Locations from './pages/Locations'
 import About from './pages/About'
-import Chat from './components/Chat'
+import Chat from './Chat'
 
 function App() {
   const navigate = useNavigate()

@@ -3,6 +3,7 @@ import './App.css'
 import Home from './pages/Home'
 import Locations from './pages/Locations'
 import About from './pages/About'
+import Chat from './components/Chat'
 
 function App() {
   const navigate = useNavigate()
@@ -16,6 +17,7 @@ function App() {
           <NavLink to="/" end>Home</NavLink>
           <NavLink to="/locations">Explore</NavLink>
           <NavLink to="/about">About</NavLink>
+          
         </div>
 
         <button className="nav-button" onClick={() => navigate('/locations')}>
@@ -24,6 +26,7 @@ function App() {
       </nav>
 
       <main>
+        <Chat />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/locations" element={<Locations />} />

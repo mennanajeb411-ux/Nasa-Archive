@@ -7,21 +7,21 @@ const base = import.meta.env.BASE_URL
 const locations = [
   {
     name: 'Moon',
-    model: base + 'models/Moon_NASA_LRO_8k_Topo_Small.glb',
+  model: base + 'models/moon-small.glb',
     position: [-5.5, 0, 0],
     size: 1.7,
     info: 'Apollo-era landers and rovers still rest on the lunar surface.',
   },
   {
     name: 'Mars',
-    model: base + 'models/24881_Mars_1_6792.glb',
+model: base + 'models/mars-small.glb',
     position: [0, 0, 0],
     size: 2.2,
     info: 'Dead rovers and landers wait silently across the red plains.',
   },
   {
     name: 'Deep Space',
-    model: base + 'models/cassiopeia.glb',
+model: base + 'models/cassiopeia-small.glb',
     position: [5.8, 0, 0],
     size: 2.0,
     info: 'The glowing remains of a star that exploded over 300 years ago.',
@@ -126,12 +126,12 @@ function Locations() {
   return (
     <section className="locations-fullscreen">
       <div className="scene-full">
-       <Canvas camera={{ position: [0, 1.5, 12], fov: 50 }}>
+      <Canvas camera={{ position: [0, 1.5, 12], fov: 50 }} dpr={[1, 1.5]}>
           <ambientLight intensity={1.2} />
           <directionalLight position={[5, 5, 5]} intensity={2.5} />
           <pointLight position={[-8, -3, -5]} intensity={40} color="#4f8cff" />
 
-          <Stars radius={80} depth={50} count={4000} factor={4} fade speed={1.5} />
+          <Stars radius={80} depth={50} count={1500} factor={4} fade speed={1.5} />
 
           {locations.map((l) => (
             <Planet
